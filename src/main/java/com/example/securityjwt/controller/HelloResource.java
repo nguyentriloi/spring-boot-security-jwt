@@ -49,4 +49,9 @@ public class HelloResource {
         final String jwt = jwtUtil.generateToken(userDetails);
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
 }
