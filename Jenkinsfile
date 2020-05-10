@@ -3,6 +3,7 @@ node {
     git 'https://github.com/nguyentriloi/spring-boot-security-jwt.git'
   }
   stage('Compile Package'){
-    sh 'mvn package'
+    def mvnHome = tool name: 'mvn', type: 'maven'
+    sh "${mvnHome}/bin/mvn package"
   }
 }
